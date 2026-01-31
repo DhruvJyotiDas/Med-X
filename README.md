@@ -4,6 +4,9 @@
 MediSpace is a centralized digital healthcare platform designed to simplify medical data management and improve clinical decision-making. By leveraging **LLM-based AI summarization (Google Gemini)**, the platform transforms complex medical reports into concise, actionable insights for both patients and doctors.
 
 ---
+## 🚀 Demo Link
+📹 **Hosted Website Link**  - https://future-health-net.replit.app
+
 
 ## 🎥 Demo
 📹 **Platform Walkthrough Video**  
