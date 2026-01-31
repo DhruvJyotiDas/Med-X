@@ -22,20 +22,20 @@ Below are selected interface screenshots showcasing the core workflows and user 
 ### Patient & Doctor Portal Interfaces
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/39ca741b-4586-4d32-b528-39e8fd0ea1c8" width="45%" />
-  <img src="https://github.com/user-attachments/assets/8842a3ed-5ad9-4c4f-91d9-7b39972e1753" width="45%" />
+  <img src="https://github.com/user-attachments/assets/75e7efae-41bd-4ed3-9716-e31412d84b82" width="45%" />
+  <img src="https://github.com/user-attachments/assets/a932c708-02e7-48f2-82b4-0f12daa641af" width="45%" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0e131040-3518-424e-b1b6-875273877299" width="45%" />
-  <img src="https://github.com/user-attachments/assets/259324f6-60c0-4828-8b30-9964438b0d0a" width="45%" />
+  <img src="https://github.com/user-attachments/assets/b87827f8-6bca-4f48-82fd-00fe63d3c488" width="45%" />
+  <img src="https://github.com/user-attachments/assets/b7ffc22d-86f6-409b-bf32-6d90baa585ee" width="45%" />
 </p>
 
 ### Interface Highlights
 - Centralized patient dashboard with specialty-wise medical reports  
 - AI-powered medical report summarization and insights  
 - Appointment booking and schedule management  
-- Secure role-based views for patients and doctors
+- Secure role-based views for patients and doctors  
 
 ---
 ## 📌 Problem Statement
