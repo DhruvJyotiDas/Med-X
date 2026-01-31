@@ -7,7 +7,7 @@ MediSpace is a centralized digital healthcare platform designed to simplify medi
 
 ## 🎥 Demo
 📹 **Platform Walkthrough Video**  
-(https://drive.google.com/file/d/1UC7sSE6_9mfhOapV36bd5iYmFz-miqDU/view?usp=sharing)
+<video src="https://drive.google.com/file/d/1UC7sSE6_9mfhOapV36bd5iYmFz-miqDU/view?usp=sharing" width="100%" controls title="MediSpace Demo"></video>
 
 ---
 
