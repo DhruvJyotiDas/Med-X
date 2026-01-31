@@ -1,0 +1,120 @@
+Extend the existing MediSpace prototype by upgrading the report buttons and report handling system.
+
+Feature: Advanced Report Pages + Smart Upload & OCR Analysis
+
+1) Dashboard Report Buttons → Dedicated Report Pages
+
+Change the behavior of report buttons on the dashboard (Radiology, Skin, Diabetes, Dental, Cardiology, etc.).
+
+New Behavior:
+- When a patient clicks a report button (e.g. “Skin Reports” or “Radiology”),
+  navigate to a dedicated report page for that category.
+
+Each Report Category Page should display:
+- A list of past doctor visits related to that category
+- Each visit card should include (sample data for now, 4–5 entries per category):
+  - Doctor Name
+  - Hospital / Clinic Name
+  - Date of Visit
+  - Reason / Diagnosis (short)
+  - Revisit Date (if any)
+
+Example:
+- Skin Reports
+  - Dr. Ram Kumar – Apollo Dermatology – 5 Sept – Rashes
+  - Dr. Neha Singh – Fortis Skin Center – 12 Aug – Acne
+  - etc.
+
+Clicking a Doctor Visit:
+- Opens a detailed prescription / visit view
+- Shows all information written by the doctor in a clean, structured format
+
+2) Upload Prescription / Report (Patient-Side)
+
+Add an “Upload Report / Prescription” button on:
+- Patient Dashboard
+- Each individual report category page
+
+Upload Flow:
+- Patient uploads a PDF or image from their device
+- The uploaded file is OCR scanned
+- OCR text is sent to Gemini API for analysis and structuring
+
+Gemini API:
+- Use Gemini API for report understanding and structuring
+- API Key:
+  AIzaSyDhOvzr2qTTWiJX8fa-jg-5H8Yj2e4iPHU
+
+AI Processing Requirements:
+- Extract and identify:
+  - Report category (Skin, Radiology, Diabetes, Dental, etc.)
+  - Doctor name
+  - Hospital / Clinic name
+  - Date of visit
+  - Diagnosis / symptoms
+  - Medications prescribed
+  - Dosage and duration
+  - Revisit / follow-up date (if mentioned)
+- Automatically classify the report into the correct report category
+- Store and display the structured data in the appropriate report page
+
+Example:
+- Patient uploads a skin prescription PDF
+- OCR + Gemini detects it as a dermatology report
+- Report is automatically added under “Skin Reports”
+- Appears as:
+  “Dr. Ram Kumar – Apollo Dermatology – 5 Sept – Rashes”
+
+3) Detailed Prescription View (OCR → Structured)
+
+Inside each report category:
+- Clicking a doctor visit opens a detailed view showing:
+  - Doctor name
+  - Hospital
+  - Date of visit
+  - Diagnosis
+  - Medication list (clean table or bullets)
+  - Instructions
+  - Revisit date
+- All content shown is derived from OCR + Gemini analysis
+- Layout must look like a clean digital medical record (not raw OCR text)
+
+4) PDF Export (Old + AI-Enhanced)
+
+Add PDF download functionality for reports:
+
+- From the detailed prescription view:
+  - “Download Original Prescription PDF”
+  - “Download AI-Formatted Prescription PDF”
+
+AI-Formatted PDF must include:
+- Clean, hospital-grade layout
+- Patient details
+- Doctor and hospital details
+- Structured diagnosis and medications
+- Revisit instructions
+- An AI-generated short summary (via Gemini)
+- Date of generation
+
+5) AI Summary Integration (Per Report)
+
+For each individual report:
+- Add an “AI Summary” section
+- Summary generated via Gemini API
+- Short, clear, layman-friendly explanation of:
+  - What the issue was
+  - What the medicines are for
+  - Any follow-up importance
+
+(Doctor view may later show a more clinical version, but patient view is default.)
+
+6) UX & Design Expectations
+
+- Maintain existing MediSpace dark sci-fi medical theme
+- Smooth transitions between dashboard → report category → doctor visit
+- Loading states during OCR and AI processing
+- Clear confirmation once report is auto-classified
+- Strong sense of data ownership and privacy
+
+Overall Goal:
+Transform MediSpace from a static report viewer into a smart medical record system where patients can upload real prescriptions, have them automatically understood and organized using OCR + Gemini AI, and view, download, and summarize their medical history in a clean, structured, and future-ready way.

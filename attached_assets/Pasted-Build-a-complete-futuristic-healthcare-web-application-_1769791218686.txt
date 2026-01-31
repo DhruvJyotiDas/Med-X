@@ -1,0 +1,163 @@
+Build a complete futuristic healthcare web application with a 3D space / sci-fi medical theme.
+
+Core Roles & Access Model:
+- Two distinct user roles: Patient and Doctor
+- Patients fully own their medical data
+- Patients can explicitly select and authorize one or multiple doctors
+- ONLY authorized doctors can view that specific patient’s full medical history
+- Unauthorized doctors must not see any patient data
+- Access can be revoked or modified by the patient at any time
+
+Authentication & Backend:
+- Authentication and authorization handled via backend APIs
+- MongoDB used as the primary database
+- Database connection via environment variable:
+  MONGO_URI = mongodb+srv://dhruvjyoti100_db_user:4TuxhVcyPoSv4iJN@meracluster.duls9ov.mongodb.net/medispace
+- Passwords must be hashed before storing
+- Role-based and permission-based access control enforced at backend level
+
+MongoDB Collections (Logical Model):
+- users:
+  - userId
+  - fullName
+  - email
+  - passwordHash
+  - role (patient | doctor)
+
+- doctorAccess:
+  - patientId
+  - doctorId
+  - accessGranted (true/false)
+  - grantedAt
+
+- patientReports:
+  - patientId
+  - category (dental, diabetes, dermatology, radiology, cardiology, neurology, orthopedics, pathology, etc.)
+  - documentUrl / fileReference
+  - extractedText
+  - uploadedAt
+
+- familyMedicalHistory:
+  - patientId
+  - conditionLabel (diabetes, cancer, cardiac, genetic, etc.)
+  - relation (father, mother, sibling, grandparent)
+  - notes
+
+- appointments:
+  - patientId
+  - doctorId
+  - date
+  - time
+  - type (consultation / follow-up)
+  - reminderStatus
+
+Frontend & Design Language:
+- Dark space background with animated particles / neural connections
+- Glassmorphism UI with blur, neon cyan medical accents
+- Subtle 3D parallax effects
+- Futuristic yet professional healthcare aesthetic (not gaming)
+- Smooth transitions and micro-interactions
+
+Pages & Features to Build:
+
+1) Login Page
+- 3D space animated background
+- Glassmorphic login card
+- Role selector toggle: Patient | Doctor
+- Inputs:
+  - Patient: Health Record Number + Password
+  - Doctor: Medical License ID + Password
+- Auth request → backend → MongoDB validation
+- Redirect to role-specific dashboard
+
+2) Register Page
+- Same theme as login
+- Role selector
+- Inputs:
+  - Full Name
+  - Email
+  - ID (Health Record Number / Medical License ID)
+  - Password + Confirm Password
+- Store user securely in MongoDB
+- Redirect to login after success
+
+3) Patient Dashboard (Data Ownership View)
+- Folder-based medical report system:
+  - Dental Reports
+  - Diabetes / Sugar Reports
+  - Dermatology / Skin
+  - Radiology (X-ray, MRI, CT)
+  - Cardiology
+  - Neurology
+  - Orthopedics
+  - Pathology / Lab Tests
+  - Pediatrics (if applicable)
+  - General Medicine
+- Each folder contains uploaded reports and history
+- Centralized “All Reports” view
+- Doctor Access Management:
+  - List of doctors
+  - Select one or multiple doctors to grant access
+  - View / revoke access at any time
+
+4) Doctor Dashboard (Permission-Based View)
+- Doctor can ONLY see patients who have explicitly granted access
+- For each authorized patient:
+  - View full medical history
+  - View family medical history with labeled conditions
+  - View categorized reports
+- No access to unauthorized patient data
+
+5) Family Medical History Module
+- Patient can add structured family history:
+  - Condition labels (diabetes, cancer, heart disease, genetic disorders, etc.)
+  - Relation mapping (father, mother, sibling, etc.)
+- Visible only to authorized doctors
+- Displayed as a clear, visual medical risk summary
+
+6) AI-Powered Centralized Report Analysis
+- A centralized analysis engine processes all patient reports
+- MedGemma runs locally to:
+  - Analyze all uploaded reports together
+  - Generate a unified medical summary
+- Output modes:
+  - Patient View:
+    - Short, simple, layman-friendly bullet points
+    - Clear health insights without medical jargon
+  - Doctor View (toggle-based, doctor-only):
+    - Detailed clinical summary
+    - Medical terminology
+    - Cross-report correlations
+- Ability to generate:
+  - Full medical summary (all reports)
+  - Category-specific summary (e.g. only skin reports, only diabetes)
+  - Single-document summary if needed
+- Future-ready design to enhance MedGemma output using Gemini API later
+
+7) Health Metrics Dashboard
+- Modular cards:
+  - Heart Rate
+  - Blood Pressure
+  - SpO2
+  - Temperature
+  - Glucose
+- Animated charts and trends
+- Color-coded risk indicators
+
+8) Appointments & Reminders
+- Patients can book appointments with selected doctors
+- Calendar-based slot selection
+- Appointments stored in MongoDB
+- Reminder system:
+  - Upcoming appointment alerts
+  - Follow-up / revisit reminders
+
+UX Expectations:
+- Clear success/error states
+- Doctor-only toggles clearly marked
+- Strong sense of data privacy and ownership
+- Responsive for desktop and tablet
+- Consistent navigation across all pages
+
+Overall Goal:
+Create a hackathon-ready, futuristic healthcare application where patients own their data, doctors access data only with consent, medical reports are intelligently organized and analyzed using local AI (MedGemma), and insights are presented differently for patients and doctors in a trustworthy, clinical, and advanced system.

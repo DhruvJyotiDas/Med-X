@@ -1,0 +1,68 @@
+Extend the existing MediSpace frontend prototype with the next two core features, keeping the same dark sci-fi medical / glassmorphism design language, animations, and typography.
+
+Feature 1: Family Medical History Module (Patient-Owned, Doctor-Restricted toggleable) 
+
+Add a Family Medical History section inside the Patient Dashboard.
+
+Requirements:
+- Patients can add structured family medical history entries:
+  - Condition label (e.g. diabetes, cardiac disease, cancer, genetic disorders, neurological, respiratory, autoimmune, etc.)
+  - Relation mapping (father, mother, sibling, grandparent, other)
+  - Optional notes
+- Entries should appear as clear visual tags/cards grouped by condition and relation
+- Patients fully control this data
+- ONLY doctors who are explicitly authorized by the patient can view family medical history
+- Unauthorized doctors must not see this section at all
+- Display family history to doctors as a concise medical risk overview
+
+UI Expectations:
+- Clean, structured medical look
+- Easy add/edit/remove flow for patients
+- Read-only, doctor-only view for doctors
+- Visual emphasis on risk labels (but not alarming)
+
+Feature 2: AI Health Report Analysis Screen (MedGemma-Ready)
+
+Add a dedicated “AI Health Summary” page accessible from both dashboards.
+
+Analysis Scope Selection:
+- Analyze All Reports (centralized view)
+- Analyze by Category (e.g. Dermatology, Diabetes, Radiology, Cardiology, etc.)
+- Analyze Single Report (individual document)
+
+AI Output Design:
+- Default Patient View:
+  - Short, clear, layman-friendly bullet points
+  - Plain language
+  - No medical jargon
+- Doctor-Only Toggle:
+  - Detailed clinical summary
+  - Medical terminology
+  - Cross-report correlations
+  - Considers family medical history when available
+- Clear UI indication that the clinical toggle is doctor-only
+
+AI System Notes:
+- UI should be designed assuming MedGemma runs locally for analysis
+- Include a visual placeholder indicating future enhancement via Gemini API
+- The AI summary should feel trustworthy and medical-grade
+
+PDF Export Requirement:
+- Add a “Download PDF” button for AI-generated reports
+- PDF should be hospital-grade and printable
+- The exported PDF must include:
+  - Patient details
+  - Selected report scope (all / category / single document)
+  - Generated AI summary
+  - Date of generation
+- PDF button should be available after summary generation
+- Same PDF export works for both patient view and doctor clinical view
+
+UX & Access Control:
+- Patient sees only patient-friendly summaries
+- Doctor sees toggle for clinical summaries
+- Access permissions must be visually clear
+- Smooth transitions and loading states
+
+Overall Goal:
+Make MediSpace feel like a real, privacy-first healthcare system where patients own their data, doctors access it only with consent, and AI provides clear insights with optional clinical depth and exportable medical reports.

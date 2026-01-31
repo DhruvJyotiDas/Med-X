@@ -1,0 +1,90 @@
+IMPORTANT: This is NOT a UI-only prototype request.
+All core features described below must be implemented in a WORKING, FUNCTIONAL state.
+No placeholder logic, no fake toggles, no visual-only enforcement.
+
+Fix and complete MediSpace so that all major features WORK end-to-end.
+
+CORE NON-NEGOTIABLE REQUIREMENTS:
+
+1) Doctor Access Control (MUST WORK)
+
+- Patients must be able to explicitly select and authorize one or multiple doctors.
+- ONLY the doctors selected by a patient are allowed to:
+  - View that patient’s reports
+  - View medical history
+  - View family medical history
+  - View AI-generated summaries
+- Any doctor NOT selected by the patient must see:
+  - Zero patient data
+  - No reports
+  - No summaries
+- Access control must be enforced logically (not just hidden UI).
+- Patient must be able to revoke doctor access at any time, and access must stop immediately.
+
+This is the MOST IMPORTANT FEATURE and must be fully functional.
+
+2) Report Visibility & Ownership (MUST WORK)
+
+- Patients own all their medical reports.
+- Reports are organized into categories (skin, radiology, diabetes, dental, cardiology, etc.).
+- Doctors can ONLY see reports of patients who granted access.
+- Doctors must NOT see reports of unapproved patients under any condition.
+
+3) AI Summary Integration (MUST WORK)
+
+AI summaries are NOT optional and must be fully integrated.
+
+There must be TWO summary modes:
+
+A) Centralized Summary (All Reports)
+- When requested, the system must generate a single AI summary using:
+  - All available reports of the patient
+  - Family medical history (if available)
+- Output:
+  - Patient-friendly summary (default)
+  - Doctor-only clinical summary (toggle visible ONLY to doctors)
+
+B) Scoped Summary (Selected Documents Only)
+- If the user selects:
+  - Specific report categories (e.g. skin + radiology)
+  - OR specific documents
+- Then the AI must generate a summary ONLY for those selected documents.
+- No data outside the selected scope should be included.
+
+This scoping behavior must WORK correctly and predictably.
+
+4) Role-Based AI Output (MUST WORK)
+
+- Patients:
+  - See short, simple, layman-friendly summaries
+  - No medical jargon
+- Doctors:
+  - Have access to a toggle for a detailed clinical summary
+  - Toggle must be completely hidden for patients
+- AI output must change based on role and scope.
+
+5) No Broken or Fake Features
+
+- If a feature is shown in the UI, it must be functional.
+- No dummy buttons, no placeholder summaries, no static text pretending to be AI output.
+- Loading states must reflect real processing.
+- If something cannot be implemented yet, it should be removed from the UI rather than faked.
+
+6) Expected End State
+
+By the end of this update:
+- Doctor access control must be real and enforced
+- Report visibility must respect patient consent
+- AI summaries must work for:
+  - All reports together
+  - Selected categories
+  - Selected documents
+- Role separation (Patient vs Doctor) must be strict and reliable
+
+OVERALL GOAL:
+
+MediSpace must behave like a real, privacy-first healthcare system where:
+- Patients control who sees their data
+- Doctors only see what they are permitted to see
+- AI provides meaningful summaries with correct scope
+- No core feature is partially implemented or non-functional
