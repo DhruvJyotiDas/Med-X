@@ -3,6 +3,26 @@
 
 MediSpace is a centralized digital healthcare platform designed to simplify medical data management and improve clinical decision-making. By leveraging **LLM-based AI summarization (Google Gemini)**, the platform transforms complex medical reports into concise, actionable insights for both patients and doctors.
 
+# 🚀 Project Novelty & Key Contributions
+
+- **UTILIZES A HIGHLY NOVEL GOOGLE TRANSFORMER — MEDGEMMA — FINE-TUNED ON CUSTOM MEDICAL DATA**  
+  This project goes beyond API-based LLM usage by fine-tuning **MedGemma** on domain-specific medical data, enabling the model to learn contextual and semantic patterns directly from real-world datasets.
+
+- **ENCODER-ONLY TRANSFORMER ARCHITECTURE FOR DEEP DATA UNDERSTANDING**  
+  The system is intentionally designed as an **encoder-only transformer**, focusing on representation learning rather than text generation, which allows deeper insight extraction and stronger semantic embeddings from medical reports.
+
+- **INSIGHT-DRIVEN MODEL DESIGN INSTEAD OF PURE GENERATION**  
+  By prioritizing an encoder-centric approach, the model emphasizes understanding latent structures, correlations, and trends within the dataset, making it suitable for analytical and summarization tasks.
+
+- **PRODUCTION-GRADE DEPLOYMENT USING NGINX ON HTTPS PORT 443**  
+  The fine-tuned model is hosted behind an **NGINX web server** exposed via standard **HTTPS (port 443)**, reflecting real-world, secure, and firewall-friendly deployment practices.
+
+- **PUBLIC HTTPS ENDPOINT FOR MACHINE LEARNING INFERENCE**  
+  The same public port is used to serve ML inference requests, demonstrating a seamless integration between secure web infrastructure and model-serving pipelines.
+
+- **END-TO-END ML AND SYSTEMS INTEGRATION**  
+  The project delivers a complete pipeline combining transformer fine-tuning, encoder-only insight extraction, and secure production-style deployment, aligning academic research with industry-ready systems.
+
 ---
 ## 🚀 Demo Link
 📹 **Hosted Website Link**  - https://future-health-net.replit.app
